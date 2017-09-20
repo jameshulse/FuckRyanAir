@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  web:
+    image: 127.0.0.1:5000/fuckryanair
+    build: .
+    ports:
+      - 80
+    networks:
+      infrastructure:
+    hostname: "fuckryanair"
+    env_file:
+      - .env
+    restart: always
+
+networks:
+  infrastructure:
+    external:
+      name: infrastructure
