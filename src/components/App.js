@@ -49,7 +49,7 @@ class App extends Component {
       for(let j = 0; j < dataSet.flights.length; j++) {
         let flight = dataSet.flights[j];
 
-        if(flight.startsWith(value+' ')) {
+        if(flight.toLowerCase().startsWith(value.toLowerCase()+' ')) {
           this.setState((prev) => ({
             ...prev,
             cancelled: true,
